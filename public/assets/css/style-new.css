@@ -1,0 +1,173 @@
+/* Ваши дополнительные кастомные стили */
+
+/* Стили для слайдера, если они не покрыты Bootstrap или index.css */
+.slider-container {
+    height: 70vh; /* Пример высоты */
+    max-height: 500px; /* Максимальная высота */
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Темный фон для текста */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: none; /* Скрыто по умолчанию, показывается jQuery */
+}
+
+.slide:first-child {
+    display: block; /* Первый слайд виден по умолчанию */
+}
+
+/* Пример фоновых изображений для слайдов (замените на свои) */
+.slide:nth-child(1) { background-image: url('https://placehold.co/1920x600/333333/FFFFFF?text=Слайд+1'); }
+.slide:nth-child(2) { background-image: url('https://placehold.co/1920x600/555555/FFFFFF?text=Слайд+2'); }
+.slide:nth-child(3) { background-image: url('https://placehold.co/1920x600/777777/FFFFFF?text=Слайд+3'); }
+
+
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.slider-control:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-control.prev { left: 1rem; }
+.slider-control.next { right: 1rem; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background: #ff5b1d; /* Цвет вашего бренда */
+    transform: scale(1.2);
+}
+
+/* Стили для хлебных крошек */
+.breadcrumb-item a {
+    color: inherit; /* Используем цвет текста родителя */
+}
+
+/* Стили для формы контактов, если нужны специфичные переопределения */
+.contact-form__form {
+    background: white;
+}
+
+/* Стили для логотипа в хедере и футере */
+.logo__image {
+    height: 40px; /* Установите желаемый размер */
+    width: auto;
+}
+
+/* Убедитесь, что все ваши классы из исходных Header.css, Footer.css и App.css перенесены сюда или в index.css */
+/* Например, если у вас были стили для .header__icon, .menu__nav, .footer__link-list и т.д. */
+
+/* Пример для .header__icon (бургер-меню) */
+.navbar-toggler {
+    border: none; /* Убираем рамку */
+    padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+    background-image: none; /* Убираем иконку Bootstrap */
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0.25rem;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Цвет линий */
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span {
+    opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Стили для адаптивного меню (если нужно переопределить Bootstrap) */
+@media (max-width: 767.98px) {
+    .header__menu.navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #f8f9fa; /* Цвет фона меню при открытии */
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+        padding: 1rem 0;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        z-index: 999;
+    }
+    .header__menu .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header__menu .nav-item {
+        margin-bottom: 0.5rem;
+    }
+}
+

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+body{
+	font-family: 'Montserrat', sans-serif !important;
+}
+h1,h2,h3,h4,h5,h6, a, button{
+	font-family: "Oswald", sans-serif !important;
+}
+.slideshow-text,
+	.slideshow-character {
+		position: relative;
+		z-index: 2;
+	}
+
+	.slideshow-text {
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	}
+	.slideshow-number-pagination {
+		color: #fff;
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.4);
+		z-index: 2;
+	}
+
+	.slide__info {
+		background: rgba(255, 255, 255, 0.1);
+		padding: 15px;
+		border-radius: 8px;
+		max-width: 800px;
+		backdrop-filter: blur(5px);
+	}
+
+	.offer {
+		margin: 120px 0px;
+	}
+
+	@media (max-width: 768px) {
+		.offer {
+			margin: 80px 0px;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.offer {
+			margin: 30px 0px;
+		}
+	}
+
+	.block {
+		text-align: center;
+	}
+
+	.block__title {
+		color: #353738;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 24px;
+		text-transform: uppercase;
+		letter-spacing: 3.6px;
+		margin: 0px 0px 18px 0px;
+	}
+
+	.block__text {
+		color: #3339;
+		font-size: 18px;
+		line-height: 34px;
+	}
+
+	.block__text_j {
+		text-align: justify;
+		font-size: 16px;
+		line-height: 30px;
+	}
+
+	.block__text_j:after {
+		content: '';
+		display: block;
+		margin: 35px auto 0px auto;
+		width: 50px;
+		height: 1px;
+		background-color: #ebebeb;
+	}
+
+	@media (max-width: 1500px) {
+		.block__text_j:after {
+			margin: 15px auto 0px auto;
+		}
+	}
+
+	.products_rev .products__column {
+		order: 1;
+	}
+
+	.products_rev .products__column_b {
+		order: 2;
+	}
+
+	.products__row {
+		display: flex;
+	}
+
+	.products__column {
+		flex: 0 1 33.333%;
+	}
+
+	.products__column_b {
+		flex: 0 1 66.667%;
+	}
+
+	.products__content {
+		padding: 70px 65px 55px 65px;
+		position: relative;
+	}
+
+	.products__content:after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		margin: 0px 0px 0px -10px;
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid #fff;
+		z-index: 2;
+	}
+
+	.products__image {
+		padding: 0px 0px 37.51% 0px;
+	}
+
+	@media (max-width: 1500px) {
+		.products__content {
+			padding: 40px 35px 30px 35px;
+		}
+	}
+
+	@media (max-width: 1100px) {
+		.products_last .products__column:nth-child(1) {
+			display: none;
+		}
+
+		.products_last .products__column:nth-child(2) {
+			order: 1;
+		}
+
+		.products_last .products__column:nth-child(3) {
+			order: 3;
+		}
+
+		.products__row {
+			flex-direction: column;
+		}
+	}
+
+	.item {
+		height: 100%;
+		display: block;
+		position: relative;
+	}
+
+	.item__icon {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		transition: all 0.3s ease 0s;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(255, 91, 14, 0.5);
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.item__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.item:hover .item__icon {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media (max-width: 1100px) {
+		.item {
+			height: auto;
+			padding: 0px 0px 70% 0px;
+		}
+	}
+	.catalog-header {
+            font-size: 2.25rem; /* Примерно 36px */
+            font-weight: 600;
+            margin-bottom: 2rem; /* 30px */
+            color: #1f2937;
+        }
+
+        @media (max-width: 768px) {
+            .catalog-header {
+                font-size: 1.75rem; /* Примерно 28px */
+            }
+        }
+
+        /* Стили для сетки статей (products-grid) - используем Bootstrap Grid System */
+        /* Классы row-cols-md-2, row-cols-lg-3 и g-4 обрабатывают сетку и отступы */
+
+        /* Стили для карточки товара (article-card) */
+        .article-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Гарантирует одинаковую высоту */
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-card:hover .article-img {
+            transform: scale(1.05);
+        }
+
+        .article-image {
+            height: 200px; /* Фиксированная высота для изображения */
+            overflow: hidden;
+        }
+
+        .article-image .article-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Сохраняем это для правильного отображения изображений */
+            transition: transform 0.3s ease;
+        }
+
+        .article-info {
+            padding: 1.25rem; /* 20px */
+        }
+
+        .article-name {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 600;
+            margin-bottom: 0.75rem; /* 12px */
+            color: #1f2937;
+        }
+
+        .article-actions {
+            margin-top: auto; /* Прижимает кнопку к низу */
+        }
+
+        /* Стиль кнопки "Подробнее" */
+        .btn-details {
+            background: #ff5b1d; /* Исходный цвет кнопки */
+            color: white;
+            border: 1px solid #ff5b1d;
+            transition: background 0.3s ease, border-color 0.3s ease;
+            padding: 0.625rem 1rem; /* 10px 16px */
+            border-radius: 0.375rem; /* 6px */
+            font-weight: 500;
+        }
+
+        .btn-details:hover {
+            background: #e04a10; /* Цвет при наведении */
+            border-color: #e04a10;
+        }
+.footer-middle {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+}
+.text-right{
+    text-align: right;
+}
+.pt-90 {
+    padding-top: 90px !important;
+}
+.my-account__address-list {
+    display: flex;
+    gap: 1.625rem;
+}
+
+.form-floating>.form-control,
+.form-floating>.form-select {
+    height: 48px;
+}
